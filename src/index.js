@@ -23,5 +23,6 @@ function onLoadMore() {
   apiService.fetchImages().then(appendImageGridMarkup);
 }
 function appendImageGridMarkup(data) {
+  console.log(data);
   refs.imageContainer.insertAdjacentHTML('beforeend', imageCardTemplate(data));
 }

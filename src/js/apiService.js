@@ -14,12 +14,12 @@ export default class ApiService {
   fetchImages(searchQuery) {
     console.log(this);
     return fetch(
-      `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=5&key=23676314-92d729b6642f8dfd3ee72d5a9`,
+      `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=23676314-92d729b6642f8dfd3ee72d5a9`,
     ).then(response => {
       return response.json().then(data => {
         this.page += 1;
         console.log(data);
-        return data.this;
+        return data.hits;
       });
     });
   }
